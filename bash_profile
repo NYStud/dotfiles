@@ -132,6 +132,9 @@ export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/share/sqlmap:$PATH
 
 #DATAMARKET STUFF:
 
+# celery import log on boxer
+alias celery_log="ssh -t boxer.datamarket.net tail -f /var/log/celeryd/live.log"
+
 export PATH="$HOME/documents/code/github/datamarket/main/elam/bin:$PATH"
 
 #DM TEST DB URL is our default
@@ -153,8 +156,8 @@ alias ssh_datamarket="sshuttle --dns -r  stimpy.datamarket.com 0/0"
 alias aws_vpn=". start-vpn.sh"
 
 #BASE36 ENCODE AND DECODE
-#alias base36encode() { ruby -e "puts Integer('$1').to_s(36)"; }
-#alias base36decode() { python -c "print int('$1', 36)"; }
+base36encode() { ruby -e "puts Integer('$1').to_s(36)"; }
+base36decode() { python -c "print int('$1', 36)"; }
 
 
 ########################

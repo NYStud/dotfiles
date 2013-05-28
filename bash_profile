@@ -1,3 +1,9 @@
+export GIT_AUTHOR_EMAIL=pallih@kaninka.net
+export GIT_AUTHOR_NAME='Páll Hilmarsson'
+export GIT_COMMITTER_EMAIL=$GIT_AUTHOR_EMAIL
+export GIT_COMMITTER_NAME=$GIT_AUTHOR_NAME
+
+
 export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 
 #Color in terminal

@@ -9,6 +9,9 @@ export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 #Color in terminal
 export CLICOLOR=1
 
+# various color stuff - grc - http://kassiopeia.juls.savba.sk/~garabik/software/grc/README.txt
+source "`brew --prefix grc`/etc/grc.bashrc"
+
 alias ls="ls -la"
 
 export EDITOR='subl'
@@ -139,7 +142,7 @@ export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/share/sqlmap:$PATH
 #DATAMARKET STUFF:
 
 # celery import log on boxer
-alias celery_log="ssh -t boxer.datamarket.net tail -f /var/log/celeryd/live.log"
+alias celery_log="grc ssh -t boxer.datamarket.net tail -f /var/log/celeryd/live.log"
 
 export PATH="$HOME/documents/code/github/datamarket/main/elam/bin:$PATH"
 

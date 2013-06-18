@@ -168,6 +168,10 @@ alias aws_vpn=". start-vpn.sh"
 base36encode() { ruby -e "puts Integer('$1').to_s(36)"; }
 base36decode() { python -c "print int('$1', 36)"; }
 
+# run a import defined in importall.py
+
+function importall() { PYTHONPATH=$PYTHONPATH:. DJANGO_SETTINGS_MODULE=datamarket.settings_local python importall.py "$@" ;}
+
 
 ########################
 #EC2 STUFF for pallih@gogn.in account

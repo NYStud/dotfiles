@@ -141,6 +141,8 @@ export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/share/sqlmap:$PATH
 
 #DATAMARKET STUFF:
 
+alias mount_boxer_dropbox="sshfs boxer.datamarket.com:/var/db/dropbox/Dropbox /tmp/ssh/boxer -ovolname=boxer -oBatchMode=yes -oworkaround=rename,noappledouble"
+
 # celery import log on boxer
 alias celery_log="grc ssh -t boxer.datamarket.net tail -f /var/log/celeryd/live.log"
 

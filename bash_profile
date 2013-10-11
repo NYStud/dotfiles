@@ -148,6 +148,7 @@ alias mount_boxer_dropbox="sshfs boxer.datamarket.com:/var/db/dropbox/Dropbox /t
 
 # celery import log on boxer
 alias celery_log="grc ssh -t boxer.datamarket.net tail -f /var/log/celeryd/live.log"
+alias celery_log_long="grc ssh -t boxer.datamarket.net tail -f /var/log/celeryd/livelong.log"
 
 export PATH="$HOME/documents/code/github/datamarket/main/elam/bin:$PATH"
 

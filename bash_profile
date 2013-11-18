@@ -144,6 +144,8 @@ export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/share/sqlmap:$PATH
 
 #DATAMARKET STUFF:
 
+alias solr_status="grc ssh -t maestro.datamarket.net  solr status dm_live"
+
 alias mount_boxer_dropbox="sshfs boxer.datamarket.com:/var/db/dropbox/Dropbox /tmp/ssh/boxer -ovolname=boxer -oBatchMode=yes -oworkaround=rename,noappledouble"
 
 # celery import log on boxer

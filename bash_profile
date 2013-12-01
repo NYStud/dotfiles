@@ -6,6 +6,9 @@ export GIT_COMMITTER_NAME=$GIT_AUTHOR_NAME
 
 export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 
+#MYSQL PATH
+export PATH="/usr/local/mysql/bin:$PATH"
+
 #SPSS 20 python libs:
 export DYLD_LIBRARY_PATH=DYLD_LIBRARY_PATH:/Applications/IBM/SPSS/Statistics/20/SPSSStatistics.app/Contents/lib
 

@@ -183,6 +183,10 @@ base36decode() { python -c "print int('$1', 36)"; }
 
 function importall() { PYTHONPATH=$PYTHONPATH:. DJANGO_SETTINGS_MODULE=datamarket.settings_local python importall.py "$@" ;}
 
+# print available importmodules in importall
+
+alias importmodules="perl -l -0777 -ne 'print /\{\s*(.*?)\s*\}/gs' importall.py"
+
 
 ########################
 #EC2 STUFF for pallih@gogn.in account

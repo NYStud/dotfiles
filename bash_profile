@@ -49,9 +49,7 @@ alias ip="curl ifconfig.me"
 alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
 
-# #DataMarket
-alias datamarket="cd /Users/pallih/documents/code/github/datamarket/main/elam/src; echo Last commit on this branch:; git_since_last_commit"
-alias whichdb="printenv | grep 'datamarket_DBURL'"
+
 # #virtualenv
 #export WORKON_HOME=~/Envs
 # THIS IS SLOOOOOOOOOW
@@ -147,45 +145,18 @@ export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/share/sqlmap:$PATH
 
 #DATAMARKET STUFF:
 
-alias solr_status="grc ssh -t maestro.datamarket.net  solr status dm_live"
+# source utilites
 
-alias mount_boxer_dropbox="sshfs boxer.datamarket.com:/var/db/dropbox/Dropbox /tmp/ssh/boxer -ovolname=boxer -oBatchMode=yes -oworkaround=rename,noappledouble"
+. ~/documents/code/github/datamarket/main/elam/etc/utils.bashrc
 
-# celery import log on boxer
-alias celery_log="grc ssh -t boxer.datamarket.net tail -f /var/log/celeryd/live.log"
-alias celery_log_long="grc ssh -t boxer.datamarket.net tail -f /var/log/celeryd/livelong.log"
+# export PATH="$HOME/documents/code/github/datamarket/main/elam/bin:$PATH"
 
-export PATH="$HOME/documents/code/github/datamarket/main/elam/bin:$PATH"
-
-#DM TEST DB URL is our default
-export datamarket_DBURL=postgresql://devpallih@hulk.datamarket.net/dm_test
-# Run against dm_test - use with dm_test
-alias dm_test=". dm_test.sh"
-# Run against dm_live - use with dm_live
-alias dm_live=". dm_live.sh"
-# Run against dm_live when a ssh tunnel is in place for postgres- use with dm_test_ssh
-alias dm_test_ssh=". dm_test_ssh.sh"
-# Run against dm_live when a ssh tunnel is in place for postgres- use with dm_live_ssh
-alias dm_live_ssh=". dm_live_ssh.sh"
 
 #Tunnel everything through datamarket
 alias ssh_datamarket="sshuttle --dns -r  stimpy.datamarket.com 0/0"
 
 # Tunnel everything through AWS instance
-
 alias aws_vpn=". start-vpn.sh"
-
-#BASE36 ENCODE AND DECODE
-base36encode() { ruby -e "puts Integer('$1').to_s(36)"; }
-base36decode() { python -c "print int('$1', 36)"; }
-
-# run a import defined in importall.py
-
-function importall() { PYTHONPATH=$PYTHONPATH:. DJANGO_SETTINGS_MODULE=datamarket.settings_local python importall.py "$@" ;}
-
-# print available importmodules in importall
-
-alias importmodules="perl -l -0777 -ne 'print /\{\s*(.*?)\s*\}/gs' importall.py"
 
 
 ########################
@@ -199,19 +170,9 @@ export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home/
 
 ###############
 
-function git_since_last_commit {
-    now=`date +%s`;
-    last_commit=$(git log --pretty=format:%at -1 2> /dev/null) || return;
-    seconds_since_last_commit=$((now-last_commit));
-    minutes_since_last_commit=$((seconds_since_last_commit/60));
-    hours_since_last_commit=$((minutes_since_last_commit/60));
-    minutes_since_last_commit=$((minutes_since_last_commit%60));
 
-    echo "${hours_since_last_commit} hours ${minutes_since_last_commit} minutes ";
-}
-
-echo "Last commit on this branch: "
-git_since_last_commit
+#echo "Last commit on this branch: "
+#git_since_last_commit
 
 
 # startup virtualenv-burrito
@@ -224,3 +185,4 @@ fi
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
   fi
+

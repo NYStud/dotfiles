@@ -18,10 +18,10 @@ export CLICOLOR=1
 # various color stuff - grc - http://kassiopeia.juls.savba.sk/~garabik/software/grc/README.txt
 source "`brew --prefix grc`/etc/grc.bashrc"
 
-alias ls="ls -la"
+alias lstree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
+alias tree="tree -NC"
 
 export EDITOR='subl'
-
 
 #export EDITOR="'/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl'"
 alias subl="$EDITOR"

@@ -49,6 +49,10 @@ alias ip="curl ifconfig.me"
 alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
 
+# paths
+alias path='echo -e ${PATH//:/\\n}'
+alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
+
 
 # #virtualenv
 #export WORKON_HOME=~/Envs
@@ -149,7 +153,7 @@ export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/share/sqlmap:$PATH
 
 . ~/documents/code/github/datamarket/main/elam/etc/utils.bashrc
 
-# export PATH="$HOME/documents/code/github/datamarket/main/elam/bin:$PATH"
+export PATH="$HOME/documents/code/github/datamarket/main/elam/bin:$PATH"
 
 
 #Tunnel everything through datamarket

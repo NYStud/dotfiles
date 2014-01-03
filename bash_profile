@@ -3,6 +3,13 @@ export GIT_AUTHOR_NAME='Páll Hilmarsson'
 export GIT_COMMITTER_EMAIL=$GIT_AUTHOR_EMAIL
 export GIT_COMMITTER_NAME=$GIT_AUTHOR_NAME
 
+# PERL PATHS
+
+export PERL_LOCAL_LIB_ROOT="/Users/pallih/perl5:$PERL_LOCAL_LIB_ROOT";
+export PERL_MB_OPT="--install_base "/Users/pallih/perl5"";
+export PERL_MM_OPT="INSTALL_BASE=/Users/pallih/perl5";
+export PERL5LIB="/Users/pallih/perl5/lib/perl5:$PERL5LIB";
+export PATH="/Users/pallih/perl5/bin:$PATH";
 
 export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 

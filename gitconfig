@@ -34,3 +34,7 @@
 
 [push]
 	default = simple
+
+[alias]
+	wsadd = "!sh -c 'git diff -- \"$@\" | git apply --cached --whitespace=fix;\
+	git checkout -- ${1-.} \"$@\"' -"

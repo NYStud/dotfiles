@@ -55,6 +55,7 @@ function dns2ip() {
 alias ip="curl ifconfig.me"
 alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
+alias dnsflush="sudo killall -HUP mDNSResponder"
 
 # paths
 alias path='echo -e ${PATH//:/\\n}'
@@ -164,10 +165,13 @@ export PATH="$HOME/documents/code/github/datamarket/main/elam/bin:$PATH"
 
 
 #Tunnel everything through datamarket
-alias ssh_datamarket="sshuttle --dns -r  stimpy.datamarket.com 0/0"
+alias vpn_datamarket="sshuttle --dns -r  stimpy.datamarket.com 0/0"
 
 # Tunnel everything through AWS instance
-alias aws_vpn=". start-vpn.sh"
+alias vpn_aws=". start-vpn.sh"
+
+# Tunnel everything through shell.cjb.net
+alias vpn_cjb="sshuttle --dns -r  shell.cjb.net 0/0"
 
 
 ########################

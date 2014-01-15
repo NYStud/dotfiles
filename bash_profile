@@ -52,6 +52,44 @@ function dns2ip() {
   dig +short $* | sed "/[^0-9\.]/d" # use sed to remove non-IPv4 line e.g. alias
 }
 
+
+function mask(){
+
+if [ -z $1 ]
+then
+  change="none"
+elif [ -n $1 ]
+then
+# otherwise make first arg as our arg
+  change=$1
+fi
+
+# use case statement
+case $change in
+   "host") NEWHOST=$(sed `perl -e "print int rand(99999)"`"q;d" /usr/share/dict/words)
+    	echo "Changing hostname from: " $(hostname)
+    	sudo scutil --set HostName "$NEWHOST"
+    	sleep 2
+    	echo "New hostname is:" $(hostname);;
+   "mac") NEWMAC=$(openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//')
+    	echo "Changing MAC from: " $(ifconfig en0 | grep ether)
+    	sudo ifconfig en0 ether $NEWMAC
+    	echo "New MAC is:" $(ifconfig en0 | grep ether);;
+   "all") NEWMAC=$(openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//')
+    echo "Changing MAC from: " $(ifconfig en0 | grep ether)
+    sudo ifconfig en0 ether $NEWMAC
+    echo "New MAC is:" $(ifconfig en0 | grep ether)
+    NEWHOST=$(sed `perl -e "print int rand(99999)"`"q;d" /usr/share/dict/words)
+    echo "Changing hostname from: " $(hostname)
+    sudo scutil --set HostName "$NEWHOST"
+    sleep 2
+    echo "New hostname is:" $(hostname);;
+   *) echo "Usage: mask host | mask mac | mask all";;
+esac
+
+}
+
+
 alias ip="curl ifconfig.me"
 alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"

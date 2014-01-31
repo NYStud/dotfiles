@@ -19,6 +19,9 @@ export PATH="/usr/local/mysql/bin:$PATH"
 #SPSS 20 python libs:
 export DYLD_LIBRARY_PATH=DYLD_LIBRARY_PATH:/Applications/IBM/SPSS/Statistics/20/SPSSStatistics.app/Contents/lib
 
+#Metasploit config
+export MSF_DATABASE_CONFIG=/opt/msf/database.yml
+
 #Color in terminal
 export CLICOLOR=1
 
@@ -52,6 +55,13 @@ function dns2ip() {
   dig +short $* | sed "/[^0-9\.]/d" # use sed to remove non-IPv4 line e.g. alias
 }
 
+function datasetinfo() {
+    curl -s 'http://datamarket.com/api/v1/information.json?callback=&ds='$* |  underscore print --color
+}
+
+function datasetinfosolr() {
+    curl -s 'http://datamarket.com/solr/dm_live/select?fq=id:'$* |  underscore print --color
+}
 
 function mask(){
 
@@ -84,7 +94,9 @@ case $change in
     sudo scutil --set HostName "$NEWHOST"
     sleep 2
     echo "New hostname is:" $(hostname);;
-   *) echo "Usage: mask host | mask mac | mask all";;
+   *) echo "Your MAC address"$(ifconfig en0 | grep ether)
+	  echo "Your hostname: " $(hostname)
+	  echo "Usage: mask host | mask mac | mask all";;
 esac
 
 }
@@ -98,6 +110,9 @@ alias dnsflush="sudo killall -HUP mDNSResponder"
 # paths
 alias path='echo -e ${PATH//:/\\n}'
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
+
+# Activate the screensaver
+alias lockout='/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine'
 
 
 # #virtualenv

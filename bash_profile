@@ -55,14 +55,6 @@ function dns2ip() {
   dig +short $* | sed "/[^0-9\.]/d" # use sed to remove non-IPv4 line e.g. alias
 }
 
-function datasetinfo() {
-    curl -s 'http://datamarket.com/api/v1/information.json?callback=&ds='$* |  underscore print --color
-}
-
-function datasetinfosolr() {
-    curl -s 'http://datamarket.com/solr/dm_live/select?fq=id:'$* |  underscore print --color
-}
-
 function mask(){
 
 if [ -z $1 ]

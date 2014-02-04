@@ -106,6 +106,10 @@ alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.ar
 # Activate the screensaver
 alias lockout='/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine'
 
+# Random password string. Pass integer for length
+function randpass() {
+  jot -r -c $* . z | rs -g 0 $*
+}
 
 # #virtualenv
 #export WORKON_HOME=~/Envs

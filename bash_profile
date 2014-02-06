@@ -13,6 +13,8 @@ export PATH="/Users/pallih/perl5/bin:$PATH";
 
 export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 
+export HISTFILE=~/.bash-history-${ITERM_SESSION_ID}
+
 #MYSQL PATH
 export PATH="/usr/local/mysql/bin:$PATH"
 

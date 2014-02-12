@@ -113,6 +113,12 @@ function randpass() {
   jot -r -c $* . z | rs -g 0 $*
 }
 
+# Custom TOR configs
+alias torice="tor -f ~/.torrc/torrc-exit-iceland"
+alias torall="tor -f ~/.torrc/torrc-exit-all"
+# Make Iceland exit default
+alias tor=torice
+
 # #virtualenv
 #export WORKON_HOME=~/Envs
 # THIS IS SLOOOOOOOOOW

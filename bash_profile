@@ -119,6 +119,9 @@ alias torall="tor -f ~/.torrc/torrc-exit-all"
 # Make Iceland exit default
 alias tor=torice
 
+# Alias proxychains
+alias proxy=proxychains4
+
 # #virtualenv
 #export WORKON_HOME=~/Envs
 # THIS IS SLOOOOOOOOOW

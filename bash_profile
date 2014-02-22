@@ -260,6 +260,10 @@ fi
 
 # BASH TAB COMPLETION
 
+# case insensitive
+
+bind "set completion-ignore-case on"
+
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
   fi

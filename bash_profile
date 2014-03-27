@@ -78,13 +78,14 @@ case $change in
     	sudo scutil --set HostName "$NEWHOST"
     	sleep 2
     	echo "New hostname is:" $(hostname);;
-   "mac") NEWMAC=$(openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//')
+   "mac") #NEWMAC=$(openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//')
     	echo "Changing MAC from: " $(ifconfig en0 | grep ether)
-    	sudo ifconfig en0 ether $NEWMAC
+    	sudo spoof-mac randomize wi-fi
     	echo "New MAC is:" $(ifconfig en0 | grep ether);;
-   "all") NEWMAC=$(openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//')
+   "all") #NEWMAC=$(openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//')
     echo "Changing MAC from: " $(ifconfig en0 | grep ether)
-    sudo ifconfig en0 ether $NEWMAC
+    #sudo ifconfig en0 ether $NEWMAC
+    sudo spoof-mac randomize wi-fi
     echo "New MAC is:" $(ifconfig en0 | grep ether)
     NEWHOST=$(sed `perl -e "print int rand(99999)"`"q;d" /usr/share/dict/words)
     echo "Changing hostname from: " $(hostname)

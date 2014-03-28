@@ -108,6 +108,7 @@ alias dnsflush="sudo killall -HUP mDNSResponder"
 # paths
 alias path='echo -e ${PATH//:/\\n}'
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
+alias urldecode='python -c "import sys, urllib as ul; print ul.unquote_plus(sys.argv[1])"'
 
 # Activate the screensaver
 alias lockout='/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine'

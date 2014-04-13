@@ -16,7 +16,7 @@ export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 export HISTFILE=~/.bash-history-${ITERM_SESSION_ID}
 
 # DATAMARKET DROPBOX ROOTPATH:
-export DM_DROPBOX_ROOTPATH="/Users/pallih/Dropbox-DataMarket/Dropbox"
+export DM_DROPBOX_ROOTPATH="/Users/pallih/Dropbox (DataMarket)"
 
 #MYSQL PATH
 export PATH="/usr/local/mysql/bin:$PATH"

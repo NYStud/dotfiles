@@ -187,7 +187,7 @@ function parse_git_branch() {
 	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
 }
 
-export PS1="\[${BOLD}${MAGENTA}\]\u \[$WHITE\]at \[$ORANGE\]\h \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
+export PS1="\[${BOLD}\033[1;33m\]\u \[\033[1;37m\]at \[$ORANGE\]\h \[\033[1;37m\]in \[\033[1;32m\]\w\[\033[1;37m\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[\033[1;31m\]\$(parse_git_branch)\[\033[1;37m\]\n\$ \[$RESET\]"
 
 # Setting for the new UTF-8 terminal support in Lion - fixed git perl errors - http://blog.assimov.net/blog/2011/07/25/setting-locale-failed-with-git-after-mac-lion-upgrade/
 export LC_CTYPE=en_US.UTF-8
@@ -269,4 +269,5 @@ bind "set completion-ignore-case on"
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
   fi
+
 

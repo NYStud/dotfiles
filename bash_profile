@@ -30,6 +30,8 @@ export MSF_DATABASE_CONFIG=/opt/msf/database.yml
 #Color in terminal
 export CLICOLOR=1
 
+export HISTTIMEFORMAT="%d-%m-%Y %T "
+
 # various color stuff - grc - http://kassiopeia.juls.savba.sk/~garabik/software/grc/README.txt
 source "`brew --prefix grc`/etc/grc.bashrc"
 
@@ -126,6 +128,11 @@ alias tor=torice
 
 # Alias proxychains
 alias proxy=proxychains4
+
+#Turn shell into a TOR shell
+alias torshellon=". torsocks on"
+alias torshelloff=". torsocks off"
+
 
 # #virtualenv
 #export WORKON_HOME=~/Envs
@@ -230,7 +237,7 @@ export PATH="$HOME/documents/code/github/datamarket/main/elam/bin:$PATH"
 
 
 #Tunnel everything through datamarket
-alias vpn_datamarket="sshuttle --dns -r  stimpy.datamarket.com 0/0"
+alias vpn_datamarket="sshuttle --dns -r  boxer.datamarket.com 0/0"
 
 # Tunnel everything through AWS instance
 alias vpn_aws=". start-vpn.sh"

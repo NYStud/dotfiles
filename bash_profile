@@ -257,7 +257,6 @@ export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home/
 
 ###############
 
-
 #echo "Last commit on this branch: "
 #git_since_last_commit
 

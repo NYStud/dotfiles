@@ -212,6 +212,9 @@ eval "$(rbenv init -)"
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
+# ruby gem paths
+export PATH=$(brew --prefix ruby)/bin:$PATH
+
 export ARCHFLAGS="-arch x86_64"
 export CC=/usr/local/bin/gcc-4.2
 export CLICOLOR=1

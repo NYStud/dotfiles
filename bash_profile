@@ -102,7 +102,7 @@ esac
 }
 
 
-alias ip="curl ifconfig.me"
+alias ip="curl httpbin.org/ip"
 alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
 alias dnsflush="sudo killall -HUP mDNSResponder"

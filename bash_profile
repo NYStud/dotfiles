@@ -121,10 +121,13 @@ function randpass() {
 }
 
 # Custom TOR configs
-alias torice="tor -f ~/.torrc/torrc-exit-iceland"
-alias torall="tor -f ~/.torrc/torrc-exit-all"
+#alias torice="tor -f ~/.torrc/torrc-exit-iceland"
+#alias torall="tor -f ~/.torrc/torrc-exit-all"
 # Make Iceland exit default
-alias tor=torice
+alias tor=/usr/local/bin/runtor-ice.sh
+#All possible
+alias torall=/usr/local/bin/runtor-all.sh
+
 
 # Alias proxychains
 alias proxy=proxychains4

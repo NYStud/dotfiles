@@ -14,3 +14,7 @@ NumEntryGuards 8
 # EXIT IN ICELAND
 StrictNodes 1
 ExitNodes {is}
+
+TestSocks 1
+#SafeSocks 1
+WarnUnsafeSocks 1

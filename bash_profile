@@ -123,10 +123,11 @@ function randpass() {
 # Custom TOR configs
 #alias torice="tor -f ~/.torrc/torrc-exit-iceland"
 #alias torall="tor -f ~/.torrc/torrc-exit-all"
-# Make Iceland exit default
-alias tor=/usr/local/bin/runtor-ice.sh
-#All possible
-alias torall=/usr/local/bin/runtor-all.sh
+
+# Exit Iceland
+alias torice=/usr/local/bin/runtor-ice.sh
+#General: Anywheer
+alias tor=/usr/local/bin/runtor-all.sh
 
 
 # Alias proxychains
@@ -135,6 +136,8 @@ alias proxy=proxychains4
 #Turn shell into a TOR shell
 alias torshellon=". torsocks on"
 alias torshelloff=". torsocks off"
+
+alias ebookconvert="/Applications/calibre.app/Contents/MacOS/ebook-convert"
 
 
 # #virtualenv

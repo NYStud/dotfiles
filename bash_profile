@@ -286,3 +286,6 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
   fi
 
 export HISTCONTROL=ignoredups
+
+# Brew Cask appfolder locations
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"

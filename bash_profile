@@ -293,4 +293,6 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # use the homebrew 2.7.9 python in virtualenvs
 export VIRTUALENV_PYTHON=/usr/local/bin/python
 
+alias ssh="mosh"
+
 

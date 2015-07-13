@@ -246,8 +246,8 @@ alias vpn_datamarket="sshuttle --dns -r  boxer.datamarket.com 0/0"
 # Tunnel everything through AWS instance
 alias vpn_aws=". start-vpn.sh"
 
-# Tunnel everything through shell.cjb.net
-alias vpn_cjb="sshuttle --dns -r  shell.cjb.net 0/0"
+# Tunnel everything through gaahl
+alias vpn_gaahl="sshuttle --dns -r gaahl 0/0"
 
 
 ########################

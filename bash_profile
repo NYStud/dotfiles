@@ -15,9 +15,6 @@ export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 
 export HISTFILE=~/.bash-history-${ITERM_SESSION_ID}
 
-# DATAMARKET DROPBOX ROOTPATH:
-export DM_DROPBOX_ROOTPATH="/Users/pallih/Dropbox (DataMarket)"
-
 #MYSQL PATH
 export PATH="/usr/local/mysql/bin:$PATH"
 
@@ -101,7 +98,6 @@ esac
 
 }
 
-
 alias ip="curl httpbin.org/ip"
 alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
@@ -115,10 +111,9 @@ alias urldecode='python -c "import sys, urllib as ul; print ul.unquote_plus(sys.
 # Activate the screensaver
 alias lockout='/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine'
 
-# Random password string. Pass integer for length
-function randpass() {
-  jot -r -c $* . z | rs -g 0 $*
-}
+# Random password string. Pass integer for length and/or number of passwords
+# Uses pwgen via brew
+alias randpass='pwgen -s -1'
 
 # Custom TOR configs
 #alias torice="tor -f ~/.torrc/torrc-exit-iceland"
@@ -223,8 +218,6 @@ export PATH=$(brew --prefix ruby)/bin:$PATH
 
 export ARCHFLAGS="-arch x86_64"
 export CC=/usr/local/bin/gcc-4.2
-export CLICOLOR=1
-export LSCOLORS=GxFxCxDxBxegedabagaced
 
 export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
 
@@ -244,6 +237,8 @@ export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/share/sqlmap:$PATH
 
 export PATH="$HOME/documents/code/github/datamarket/main/elam/bin:$PATH"
 
+# DATAMARKET DROPBOX ROOTPATH:
+export DM_DROPBOX_ROOTPATH="/Users/pallih/Dropbox (DataMarket)"
 
 #Tunnel everything through datamarket
 alias vpn_datamarket="sshuttle --dns -r  boxer.datamarket.com 0/0"
@@ -292,7 +287,3 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # use the homebrew 2.7.9 python in virtualenvs
 export VIRTUALENV_PYTHON=/usr/local/bin/python
-
-alias ssh="mosh"
-
-

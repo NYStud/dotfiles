@@ -287,3 +287,13 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # use the homebrew 2.7.9 python in virtualenvs
 export VIRTUALENV_PYTHON=/usr/local/bin/python
+
+# Use local DNS server
+localDNS () {
+    sudo networksetup -setdnsservers Wi-Fi 127.0.0.1
+}
+
+# Use DHPC DNS server
+externalDNS () {
+    sudo networksetup -setdnsservers Wi-Fi empty
+}

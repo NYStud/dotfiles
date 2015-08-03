@@ -1,10 +1,22 @@
+# --- set up terminal working preferences
+shopt -s histappend
+shopt -s extglob
+export HISTFILE="$HOME/.bash_history"
+export HISTFILESIZE=200000
+export HISTSIZE=200000
+export HISTIGNORE="clear:ls:pwd:history:hig"
+export HISTTIMEFORMAT='%F %T '
+export HISTCONTROL="ignoredups:erasedups"
+# --- save history after each command
+export PROMPT_COMMAND="history -a; history -c; history -r;"
+
+# GIT
 export GIT_AUTHOR_EMAIL=pallih@kaninka.net
 export GIT_AUTHOR_NAME='Páll Hilmarsson'
 export GIT_COMMITTER_EMAIL=$GIT_AUTHOR_EMAIL
 export GIT_COMMITTER_NAME=$GIT_AUTHOR_NAME
 
 # PERL PATHS
-
 export PERL_LOCAL_LIB_ROOT="/Users/pallih/perl5:$PERL_LOCAL_LIB_ROOT";
 export PERL_MB_OPT="--install_base "/Users/pallih/perl5"";
 export PERL_MM_OPT="INSTALL_BASE=/Users/pallih/perl5";
@@ -13,7 +25,6 @@ export PATH="/Users/pallih/perl5/bin:$PATH";
 
 export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 
-export HISTFILE=~/.bash-history-${ITERM_SESSION_ID}
 
 #MYSQL PATH
 export PATH="/usr/local/mysql/bin:$PATH"

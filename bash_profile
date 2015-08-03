@@ -25,7 +25,6 @@ export PATH="/Users/pallih/perl5/bin:$PATH";
 
 export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 
-
 #MYSQL PATH
 export PATH="/usr/local/mysql/bin:$PATH"
 
@@ -46,15 +45,10 @@ source "`brew --prefix grc`/etc/grc.bashrc"
 alias lstree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
 alias tree="tree -NC"
 
+# Edit with Sublime Text
 export EDITOR='subl'
-
-#export EDITOR="'/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl'"
 alias subl="$EDITOR"
 alias edit="$EDITOR"
-# Open file in a real text editor,
-# if you happen to type nano from your muscle memory
-#alias pico="subl"
-#alias edit="subl"
 
 ###ALIASES###
 
@@ -70,6 +64,8 @@ function dns2ip() {
   dig +short $* | sed "/[^0-9\.]/d" # use sed to remove non-IPv4 line e.g. alias
 }
 
+
+# Change hostname and mac address
 function mask(){
 
 if [ -z $1 ]
@@ -132,9 +128,8 @@ alias randpass='pwgen -s -1'
 
 # Exit Iceland
 alias torice=/usr/local/bin/runtor-ice.sh
-#General: Anywheer
+#General: Anywhere
 alias tor=/usr/local/bin/runtor-all.sh
-
 
 # Alias proxychains
 alias proxy=proxychains4
@@ -144,7 +139,6 @@ alias torshellon=". torsocks on"
 alias torshelloff=". torsocks off"
 
 alias ebookconvert="/Applications/calibre.app/Contents/MacOS/ebook-convert"
-
 
 # #virtualenv
 #export WORKON_HOME=~/Envs
@@ -272,17 +266,12 @@ export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home/
 
 ###############
 
-#echo "Last commit on this branch: "
-#git_since_last_commit
-
-
 # startup virtualenv-burrito
 if [ -f $HOME/.venvburrito/startup.sh ]; then
     . $HOME/.venvburrito/startup.sh
 fi
 
 # BASH TAB COMPLETION
-
 # case insensitive
 
 bind "set completion-ignore-case on"
@@ -291,12 +280,10 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
   fi
 
-export HISTCONTROL=ignoredups
-
 # Brew Cask appfolder locations
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-# use the homebrew 2.7.9 python in virtualenvs
+# use the homebrew python in virtualenvs
 export VIRTUALENV_PYTHON=/usr/local/bin/python
 
 # Use local DNS server
